@@ -6,9 +6,9 @@
 
         if($_SERVER["REQUEST_METHOD"]=="POST")
         {
-            $name = test_input($POST["name"]);
-            $age = test_input($POST["age"]);
-            $comments = test_input($POST["comments"]);
+            $name = test_input($_POST["name"]);
+            $age = test_input($_POST["age"]);
+            $comments = test_input($_POST["comments"]);
 
         }
 
