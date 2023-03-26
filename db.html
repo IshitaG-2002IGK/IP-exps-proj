@@ -1,0 +1,21 @@
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/neww", "root", "root");
+            Statement stmt = con.createStatement();
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            PrintWriter out = response.getWriter();
+            out.write("Username is: "+username);
+            out.write("Password is: "+password);
+            stmt.executeUpdate("insert into userTable values('"+username+"','"+password+"')");
+            out.print("Your account is created Successfully!");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(servletDerby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(servletDerby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
