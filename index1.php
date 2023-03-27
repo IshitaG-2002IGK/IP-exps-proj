@@ -53,4 +53,8 @@ echo "$comments";
 
 php -S localhost:8000 
 
+brew services restart php
+
+brew services start php
+
 -->
