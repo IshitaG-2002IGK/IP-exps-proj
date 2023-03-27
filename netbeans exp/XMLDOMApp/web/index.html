@@ -1,0 +1,41 @@
+
+<html>
+
+        <script>
+            
+            function readXmlData()
+            {
+                var xmldoc, id, name, age;
+                
+                xmldoc = new XMLHttpRequest();
+                
+                xmldoc.open("GET", "userlist.xml", false);
+                
+                xmldoc.send();
+                
+                xmldoc = xmldoc.responseXML;
+                
+                id = xmldoc.getElementsByTagName("userid");
+                name = xmldoc.getElementsByTagName("username");
+                age = xmldoc.getElementsByTagName("userage");
+                
+                for(i=0;i<id.length;i++)
+                {
+                    output = id[i].firstChild.nodeValue;
+                    if(output == document.getElementById("myText").value)
+                    {
+                        displayDiv.innerHTML= id[i].firstChild.nodeValue + "<br> "+ name[i].firstChild.nodeValue + "<br> " + age[i].firstChild.nodeValue + "<br> ";
+                    }                   
+                }
+            }
+            
+       </script>
+       
+     <body>
+       <h1>Enter User number:</h1>
+       <input type="text" id="myText" value="">       
+       <input type ="submit" value="Search User No" onclick="readXmlData()">
+       <div id="displayDiv"></div>
+   
+    </body>
+</html>

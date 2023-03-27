@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Employee Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <hr>
+        <h1> Employee Website </h1>
+        
+        <form action="MyEmpServlet">
+            
+            <table>
+                <tr>
+                    <td>Employee Id:</td>
+                    <td><input type="text" name="empid"></td>
+                </tr>
+                
+                 <tr>
+                    <td>Employee Name:</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                
+                 <tr>
+                    <td>Employee Address</td>
+                    <td><input type="text" name="addr"></td>
+                </tr>
+                
+                <tr>
+                <select name="dept">
+                    
+                    <option value="hr">HR</option>
+                    <option value="manager">Manager</option>
+                    <option value="CTO">CTO</option>
+                    <option value="VP">VP</option>
+
+                </select>
+                   
+                </tr>
+                
+                 <tr>
+                    <td><input type="submit" value="submit"></td>
+                </tr>
+                
+            </table>
+            
+         <hr>
+
+        </form>
+        
+
+    </body>
+</html>
